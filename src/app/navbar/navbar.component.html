@@ -1,0 +1,63 @@
+<div class="navbar-fixed">
+  <nav class="teal">
+    <div class="container">
+      <div class="nav-wrapper">
+        <a href="#!" class="brand-logo">TicketToRide</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down" routerLinkActive="active">
+          <li>
+            <a href="#home">Home</a>
+          </li>
+          <li>
+            <a href="#search">Search</a>
+          </li>
+          <li>
+            <a href="#popular">Popular Places</a>
+          </li>
+          <li>
+            <a href="#gallery">Gallery</a>
+          </li>
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
+          <li *ngIf="!authority" class="nav-item">
+            <a class="nav-link" routerLink="auth/login">Login/Sign Up</a>
+          </li>
+          <li *ngIf="authority === 'user'" class="nav-item">
+            <a class="nav-link" routerLink="user">Customer Board</a>
+          </li>
+          <li *ngIf="authority === 'admin'" class="nav-item">
+            <a class="nav-link" routerLink="admin">Admin Board</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+<ul class="sidenav" id="mobile-demo">
+  <li>
+    <a href="#home">Home</a>
+  </li>
+  <li>
+    <a href="#search">Search</a>
+  </li>
+  <li>
+    <a href="#popular">Popular Places</a>
+  </li>
+  <li>
+    <a href="#gallery">Gallery</a>
+  </li>
+  <li>
+    <a href="#contact">Contact</a>
+  </li>
+  <li *ngIf="!authority" class="nav-item">
+    <a class="nav-link" routerLink="auth/login">Login</a>
+  </li>
+  <li *ngIf="authority === 'user'" class="nav-item">
+    <a class="nav-link" routerLink="user">Customer Board</a>
+  </li>
+  <li *ngIf="authority === 'admin'" class="nav-item">
+    <a class="nav-link" routerLink="admin">Admin Board</a>
+  </li>
+</ul>
+
