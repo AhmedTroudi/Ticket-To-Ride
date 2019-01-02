@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {FormControl} from '@angular/forms';
+import {SearchService} from '../search.service';
+
 declare const M;
 @Component({
   selector: 'app-search',
@@ -7,8 +10,17 @@ declare const M;
 })
 export class SearchComponent implements OnInit {
 
-  constructor() {
-  }
+  searchTerm: FormControl = new FormControl();
+
+  searchResult = [];
+  constructor(private service: SearchService) {
+    this.searchTerm.valueChanges
+      .subscribe(data => {
+        this.service.search_word(data).subscribe(response => {
+          console.log(response);
+          this.searchResult = response;
+        });
+      }); }
 
   ngOnInit() {
     // Scrollspy

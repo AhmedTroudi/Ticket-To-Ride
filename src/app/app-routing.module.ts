@@ -9,7 +9,7 @@ import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
   {
-    path: 'home',
+    path: '',
     component: HomeComponent
   },
   {
@@ -30,8 +30,8 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
+    redirectTo: '',
+    pathMatch: 'prefix'
   }
 ];
 

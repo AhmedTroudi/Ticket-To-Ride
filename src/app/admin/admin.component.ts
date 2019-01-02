@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
+import {TokenStorageService} from '../auth/token-storage.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-admin',
@@ -10,7 +12,7 @@ export class AdminComponent implements OnInit {
   board: string;
   errorMessage: string;
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private token: TokenStorageService, private router: Router) { }
 
   ngOnInit() {
     this.userService.getAdminBoard().subscribe(
@@ -22,4 +24,12 @@ export class AdminComponent implements OnInit {
       }
     );
   }
+  logout() {
+    this.token.signOut();
+    this.router.navigate(['/']);
+  }
+  home() {
+    this.router.navigate(['/']);
+  }
+
 }

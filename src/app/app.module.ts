@@ -17,9 +17,11 @@ import { HomeComponent } from './home/home.component';
 import { UserComponent } from './user/user.component';
 import { AdminComponent } from './admin/admin.component';
 
-import { FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { httpInterceptorProviders } from './auth/auth-interceptor';
 import {HttpClientModule} from '@angular/common/http';
+import { CustomerDashComponent } from './customer-dash/customer-dash.component';
+import { AdminDashComponent } from './admin-dash/admin-dash.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import {HttpClientModule} from '@angular/common/http';
     RegisterComponent,
     HomeComponent,
     UserComponent,
-    AdminComponent
+    AdminComponent,
+    CustomerDashComponent,
+    AdminDashComponent
   ],
   imports: [
     BrowserModule,

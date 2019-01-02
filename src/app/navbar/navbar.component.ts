@@ -13,7 +13,7 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
     const sideNav = document.querySelector('.sidenav');
     M.Sidenav.init(sideNav, {});
-    }
   }
+}
 
 
