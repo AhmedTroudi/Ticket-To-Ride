@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import {User} from '../user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -15,11 +16,14 @@ export class UserService {
     return this.http.get('//localhost:8080/users');
   }
 
-  getUser(id: any) {
-    return this.http.get(this.userDashUrl + id);
+  getUser(user) {
+    console.log(this.userDashUrl + user.id);
+    return this.http.get(this.userDashUrl + user.id);
   }
 
-  removeUser(id: any) {
-    return this.http.delete(this.userDashUrl + '/delete' + id);
+  public removeUser(user) {
+    console.log(this.userDashUrl + '/delete' + user.id);
+    return this.http.delete(this.userDashUrl + '/delete' + user.id);
   }
+
 }

@@ -22,7 +22,6 @@ import {HttpClientModule} from '@angular/common/http';
 import { CustomerDashComponent } from './customer-dash/customer-dash.component';
 import { UserListComponent } from './user-list/user-list.component';
 import {MatButtonModule,  MatCardModule, MatCheckboxModule, MatListModule, MatButtonToggleModule} from '@angular/material';
-import { UserEditComponent } from './user-edit/user-edit.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +41,6 @@ import { UserEditComponent } from './user-edit/user-edit.component';
     UserComponent,
     CustomerDashComponent,
     UserListComponent,
-    UserEditComponent,
   ],
   imports: [
     BrowserModule,
