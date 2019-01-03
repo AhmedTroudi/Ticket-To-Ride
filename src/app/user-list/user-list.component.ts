@@ -4,7 +4,7 @@ import {UserService} from '../services/user.service';
 import {TokenStorageService} from '../auth/token-storage.service';
 import {Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
-import {User} from '../user.model';
+import {User} from '../models/user';
 
 
 @Component({
@@ -33,4 +33,9 @@ export class UserListComponent implements OnInit {
     this.router.navigate(['/']);
   }
 
+  deleteUser(user: User): void {
+    this.userService.removeUser(user)
+      .subscribe( data => {
+      });
+  }
 }

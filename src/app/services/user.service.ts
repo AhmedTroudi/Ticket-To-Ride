@@ -21,7 +21,7 @@ export class UserService {
   }
 
   public removeUser(user) {
-    return this.http.delete(this.userDashUrl + '/delete' + user.id);
+    return this.http.delete(this.userDashUrl + '/delete/' + user.id);
   }
 
 }
