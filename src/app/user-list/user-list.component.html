@@ -1,0 +1,22 @@
+<div class="container">
+  <button class="btn btn-primary" (click)="home()">Home</button>
+  <h4>Admin Dashboard</h4>
+  <mat-card>
+    <mat-card-title>Clients List</mat-card-title>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item *ngFor="let user of users">
+          <h3 mat-line>
+            <a mat-button [routerLink]="['/user-edit', user.id]">{{user.id}}</a>
+            <a mat-button [routerLink]="['/user-edit', user.id]">{{user.username}}</a>
+            <a mat-button [routerLink]="['/user-edit', user.id]">{{user.email}}</a>
+          </h3>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+
+    <button class="btn btn-flat" [routerLink]="['/user-add']">Add</button>
+  </mat-card>
+
+  <button class="btn btn-primary" (click)="logout()">Logout</button>
+</div>
