@@ -15,15 +15,14 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { UserComponent } from './user/user.component';
-import { AdminComponent } from './admin/admin.component';
 
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {FormsModule} from '@angular/forms';
 import { httpInterceptorProviders } from './auth/auth-interceptor';
 import {HttpClientModule} from '@angular/common/http';
 import { CustomerDashComponent } from './customer-dash/customer-dash.component';
-import { AdminDashComponent } from './admin-dash/admin-dash.component';
 import { UserListComponent } from './user-list/user-list.component';
 import {MatButtonModule,  MatCardModule, MatCheckboxModule, MatListModule, MatButtonToggleModule} from '@angular/material';
+import { UserEditComponent } from './user-edit/user-edit.component';
 
 @NgModule({
   declarations: [
@@ -41,10 +40,9 @@ import {MatButtonModule,  MatCardModule, MatCheckboxModule, MatListModule, MatBu
     RegisterComponent,
     HomeComponent,
     UserComponent,
-    AdminComponent,
     CustomerDashComponent,
-    AdminDashComponent,
     UserListComponent,
+    UserEditComponent,
   ],
   imports: [
     BrowserModule,
