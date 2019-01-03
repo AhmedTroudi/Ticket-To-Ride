@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+
 .slider .btn {
     margin-top: 20px;
   }
@@ -18,4 +19,9 @@
   
   .section-contact h5 {
     margin-bottom: 30px;
+  }
+  body {
+
+  background-image: url("assets/img/gradient.png");
+
   }

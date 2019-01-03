@@ -22,6 +22,8 @@ import { httpInterceptorProviders } from './auth/auth-interceptor';
 import {HttpClientModule} from '@angular/common/http';
 import { CustomerDashComponent } from './customer-dash/customer-dash.component';
 import { AdminDashComponent } from './admin-dash/admin-dash.component';
+import { UserListComponent } from './user-list/user-list.component';
+import {MatButtonModule,  MatCardModule, MatCheckboxModule, MatListModule, MatButtonToggleModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -41,13 +43,19 @@ import { AdminDashComponent } from './admin-dash/admin-dash.component';
     UserComponent,
     AdminComponent,
     CustomerDashComponent,
-    AdminDashComponent
+    AdminDashComponent,
+    UserListComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatListModule,
+    MatCardModule,
+    MatButtonToggleModule
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]

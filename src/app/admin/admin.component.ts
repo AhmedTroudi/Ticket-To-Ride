@@ -15,14 +15,6 @@ export class AdminComponent implements OnInit {
   constructor(private userService: UserService, private token: TokenStorageService, private router: Router) { }
 
   ngOnInit() {
-    this.userService.getAdminBoard().subscribe(
-      data => {
-        this.board = data;
-      },
-      error => {
-        this.errorMessage = `${error.status}: ${JSON.parse(error.error).message}`;
-      }
-    );
   }
   logout() {
     this.token.signOut();

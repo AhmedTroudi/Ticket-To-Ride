@@ -13,14 +13,7 @@ export class SearchComponent implements OnInit {
   searchTerm: FormControl = new FormControl();
 
   searchResult = [];
-  constructor(private service: SearchService) {
-    this.searchTerm.valueChanges
-      .subscribe(data => {
-        this.service.search_word(data).subscribe(response => {
-          console.log(response);
-          this.searchResult = response;
-        });
-      }); }
+  constructor(private service: SearchService) {}
 
   ngOnInit() {
     // Scrollspy
