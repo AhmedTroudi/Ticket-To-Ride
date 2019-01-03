@@ -17,7 +17,7 @@ const routes: Routes = [
     component: UserComponent
   },
   {
-    path: 'users',
+    path: 'admin',
     component: UserListComponent
   },
   {

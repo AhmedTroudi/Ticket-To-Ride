@@ -33,10 +33,4 @@ export class UserListComponent implements OnInit {
     this.router.navigate(['/']);
   }
 
-  deleteUser(user: User): void {
-    this.userService.removeUser(user)
-      .subscribe( data => {
-        this.users = this.users.filter(u => u !== user);
-      });
-  }
 }

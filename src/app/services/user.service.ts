@@ -21,7 +21,6 @@ export class UserService {
   }
 
   public removeUser(user) {
-    console.log(this.userDashUrl + '/delete' + user.id);
     return this.http.delete(this.userDashUrl + '/delete' + user.id);
   }
 
