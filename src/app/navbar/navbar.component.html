@@ -21,7 +21,10 @@
             <a href="#contact">Contact</a>
           </li>
           <li *ngIf="!authority" class="nav-item">
-            <a class="nav-link" routerLink="auth/login">Login/Sign Up</a>
+            <a class="nav-link" routerLink="auth/login">
+            <div *ngIf="isLoggedIn">{{tokenStorage.getUsername()}}</div>
+            <div *ngIf="isLoggedIn==false">Login/SignUp</div>
+            </a>
           </li>
           <li *ngIf="authority === 'user'" class="nav-item">
             <a class="nav-link" routerLink="user">Customer Board</a>
@@ -51,7 +54,11 @@
     <a href="#contact">Contact</a>
   </li>
   <li *ngIf="!authority" class="nav-item">
-    <a class="nav-link" routerLink="auth/login">Login</a>
+    <a class="nav-link" routerLink="auth/login">
+      <div *ngIf="isLoggedIn">{{tokenStorage.getUsername()}}</div>
+      <div *ngIf="isLoggedIn==false">Login/SignUp</div>
+
+    </a>
   </li>
   <li *ngIf="authority === 'user'" class="nav-item">
     <a class="nav-link" routerLink="user">Customer Board</a>
