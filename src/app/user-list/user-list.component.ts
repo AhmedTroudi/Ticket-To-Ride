@@ -3,7 +3,6 @@ import {UserService} from '../services/user.service';
 
 import {TokenStorageService} from '../auth/token-storage.service';
 import {Router} from '@angular/router';
-import {HttpClient} from '@angular/common/http';
 import {User} from '../models/user';
 
 
@@ -16,10 +15,9 @@ import {User} from '../models/user';
 export class UserListComponent implements OnInit {
 
   users: Array<User>;
-  private userDashUrl = 'http://localhost:8080/users';
 
   constructor( private userService: UserService, private token: TokenStorageService,
-               private router: Router, private http: HttpClient) {}
+               private router: Router) {}
   ngOnInit() {
     this.userService.getAll().subscribe(data => {
       this.users = data;
@@ -36,6 +34,8 @@ export class UserListComponent implements OnInit {
   deleteUser(user: User): void {
     this.userService.removeUser(user)
       .subscribe( data => {
+        this.users = data;
       });
+    document.location.reload();
   }
 }

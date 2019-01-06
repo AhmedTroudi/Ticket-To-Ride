@@ -43,6 +43,6 @@ export class RegisterComponent implements OnInit {
     );
   }
   redirectlog() {
-    this.router.navigate(['/']);
+    this.router.navigate(['/auth/login']);
   }
 }

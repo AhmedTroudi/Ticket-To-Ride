@@ -12,7 +12,7 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<any> {
-    return this.http.get('//localhost:8080/users');
+    return this.http.get(this.userDashUrl);
   }
 
   getUser(user) {
@@ -20,7 +20,7 @@ export class UserService {
     return this.http.get(this.userDashUrl + user.id);
   }
 
-  public removeUser(user) {
+  removeUser(user): Observable<any> {
     return this.http.delete(this.userDashUrl + '/delete/' + user.id);
   }
 
