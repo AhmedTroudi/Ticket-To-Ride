@@ -1,5 +1,20 @@
 <div class="container">
   <button class="btn btn-primary" (click)="home()">Home</button>
       <h4>Customer Dashboard</h4>
+<mat-card>
+<table>
+  <tr *ngFor="let trip of trips">
+    <td class="hidden">{{trip.id}}</td>
+    <td>{{trip.dateFrom}}</td>
+    <td>{{trip.dateTo}}</td>
+    <td>{{trip.destination.city_name}}</td>
+    <!-- <td>{{trip.flight}}</td>-->
+    <td>{{trip.numberOfAvailable}}</td>
+    <td>{{trip.price}}</td>
+
+  </tr>
+
+  </table>
+  </mat-card>
       <button class="btn btn-primary" (click)="logout()">Logout</button>
 </div>

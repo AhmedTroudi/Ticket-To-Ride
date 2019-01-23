@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl} from '@angular/forms';
-import {SearchService} from '../search.service';
 
 declare const M;
 @Component({
@@ -10,13 +8,11 @@ declare const M;
 })
 export class SearchComponent implements OnInit {
 
-  searchTerm: FormControl = new FormControl();
-
-  searchResult = [];
-  constructor(private service: SearchService) {}
+  constructor() {
+  }
 
   ngOnInit() {
-    // Scrollspy
+    // Scroll spy
     const ss = document.querySelectorAll('.scrollspy');
     M.ScrollSpy.init(ss, {});
     // Auto Complete
